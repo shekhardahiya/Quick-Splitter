@@ -1,0 +1,25 @@
+.logout{
+    font-size: 68px;
+    width: 120px;
+    height: 120px;
+    line-height: 114px;
+    display: block;
+    margin: 20px auto 30px;
+    border-radius: 60px;
+    border: 1px solid #FFFFFF;
+    background-color: #D5D5D5;
+    text-align: center;
+    color: #FFFFFF;
+}
+.logOutSign{
+    color: #454586;
+}
+.logoutText{
+    font-family: Times New Roman,Times,serif;
+}
+a{
+    text-decoration: none;
+}
+.fa-face-smile{
+    color: brown;
+}

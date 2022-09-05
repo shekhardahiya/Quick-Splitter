@@ -1,0 +1,186 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <br />
+      <p class="introduction">
+        Groups are perfect for apartments, trips and other situations where the
+        same set of people share a large number of expenses.
+      </p>
+      <hr />
+      <p class="introduction">
+        If you have travelled recently, and worried about expenses split, create
+        a group and start splitting
+        <i class="fa-regular fa-face-smile smiley"></i>
+      </p>
+      <div class="row">
+        <div class="col-md-4 col-sm-12 createGroupBtn">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Create Group <i class="fa-solid fa-plus"></i>
+          </button>
+          <br />
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <h5 class="text-center groupheading">
+        Visit your Groups <i class="fa-solid fa-people-group groupIcon"></i>
+      </h5>
+      <hr />
+      <div *ngIf="partOfGroups?.length == 0">
+        <p class="fs-5">
+          You are not part of any group currently. Create a group, and start
+          Splitting
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Create Group
+        </button>
+      </div>
+      <div *ngFor="let group of partOfGroups" class="col-12">
+        <a class="groupName" [routerLink]="['/transactions', group.groupId]">
+          <div class="card cardgroup">
+            <div class="card-body">
+              <p class="groupName text-center text-capitalize">
+                {{ group.groupName }}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title newGroupTitle text-center"
+          id="exampleModalLabel"
+        >
+          Add New Group Here <i class="fa-solid fa-user-group"></i>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="createGroupForm">
+          <div class="">
+            <label for="userEmailId" class="form-label">Group Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="groupName"
+              aria-describedby="groupName"
+              formControlName="groupName"
+            />
+          </div>
+          <h5 class="text-center memberHeading">Members</h5>
+
+          <div formArrayName="members">
+            <div *ngFor="let member of getMembersFormControl(); let i = index">
+              <div [formGroupName]="i">
+                <!-- {{ i + 1 }}
+                skill name : -->
+                <div class="row">
+                  <div class="col-md-5 col-sm-5">
+                    <div class="">
+                      <label for="memberName" class="form-label">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="groupName"
+                        formControlName="memberName"
+                        maxlength="20"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-sm-5">
+                    <div class="">
+                      <label for="userEmailId" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="userEmailId"
+                        aria-describedby="groupName"
+                        formControlName="userEmailId"
+                      />
+                      <span id="error"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <button
+                      [disabled]="i == 0"
+                      class="btn btn-danger removeButton"
+                      (click)="removemember(i)"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <button class="btn btn-success" (click)="addMemberButtonClick()">
+            <i class="fa-solid fa-plus"></i> Add member
+          </button>
+        </form>
+
+        <br /><br /><br />
+        <button
+          type="submit"
+          class="btn btn-primary col-12"
+          (click)="createGroup()"
+          [disabled]="!createGroupForm.valid"
+        >
+          Create Group
+        </button>
+      </div>
+      <div>
+        <div
+          *ngIf="groupCreated"
+          class="alert alert-success fs-5 text-center"
+          role="alert"
+        >
+          Group Created Successfully
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="partOfGroup()"
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

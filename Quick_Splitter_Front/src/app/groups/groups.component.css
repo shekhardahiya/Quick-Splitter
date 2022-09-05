@@ -1,0 +1,77 @@
+.groupheading {
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0px;
+  font-size: 30px;
+  font-family: Times New Roman, Times, serif;
+}
+.groupIcon {
+  color: blueviolet;
+}
+.groupName {
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.introduction {
+  font-size: 30px;
+  word-spacing: 1px;
+  font-family: Times New Roman, Times, serif;
+}
+.cardgroup {
+  margin-bottom: 4px;
+}
+.removeButton {
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .createGroupBtn {
+    padding-left: 100px;
+  }
+  .removeButton {
+    margin-top: 10px;
+  }
+  .removeButton::after {
+    content: " Remove ";
+  }
+  .introduction {
+    font-size: 23px;
+  }
+  .groupheading {
+    font-size: 23px;
+  }
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c !important;
+}
+
+.card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.smiley {
+  color: orange;
+}
+.newGroupTitle {
+  text-align: center;
+}
+.memberHeading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

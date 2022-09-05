@@ -1,0 +1,16 @@
+.vl{
+    border-left: 1px solid grey;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.fa-user{
+    padding-right: 10px;
+}
+.paidButton{
+    float: right;
+}
+.fontType{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}

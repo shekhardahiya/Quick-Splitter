@@ -1,0 +1,103 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-2 col-lg-6 col-xl-5">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid"
+          alt="Sample image"
+        />
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="userRegisterForm">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="userName">Enter Your Name</label>
+
+            <input
+              type="text"
+              id="userName"
+              class="form-control form-control-lg"
+              placeholder="Enter your name"
+              formControlName="userName"
+            />
+            <span
+              class="text-danger"
+              *ngIf="form.userName.errors && form.userName.touched"
+              >Name is required</span
+            >
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="userEmailId">Email address</label>
+
+            <input
+              type="email"
+              id="userEmailId"
+              class="form-control form-control-lg"
+              placeholder="Enter a valid email address"
+              formControlName="userEmailId"
+            />
+            <span
+              class="text-danger"
+              *ngIf="form.userEmailId.errors && form.userEmailId.touched"
+              >Email must be a valid email address</span
+            >
+            <div id="userEmailId" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control form-control-lg"
+              placeholder="Enter password"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (form.password.errors && form.password.touched) ||
+                (form.password.errors && form.password.dirty)
+              "
+              >Passsword is required and must be of at least 8 characters</span
+            >
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem"
+              (click)="addNewuser()"
+              [disabled]="userRegisterForm.invalid"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+        <br />
+        <div *ngIf="successMessage" class="text-success">
+          <div class="alert alert-success text-center" role="alert">
+            <h4>User Registered Successfully Continue to Login</h4>
+            <button class="btn btn-primary col-8" [routerLink]="['/login']">
+              Login
+            </button>
+          </div>
+        </div>
+        <div *ngIf="userExist" class="text-success">
+          <!-- <div class="card"> -->
+          <!-- <div class="body"> -->
+          <div class="alert alert-warning text-center" role="alert">
+            <h6>User already Exist, Login Now</h6>
+            <button class="btn btn-primary col-8" [routerLink]="['/login']">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

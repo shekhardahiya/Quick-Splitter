@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-dark navColor">
+  <div class="container-fluid" style="margin-left: 70px">
+    <img class="navImage"
+      src="../assets/gift.png"
+      style="height: 40px; position: absolute; left: 2px; top: 5px"
+      alt=""
+    />
+    <a
+      class="navbar-brand brand"
+      href="https://billsplitter.learnandinvest.in/#/home"
+      >Quick Splitter</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/user']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/groups']">Groups</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            *ngIf="!loggedInUser"
+            [routerLink]="['/login']"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            *ngIf="!loggedInUser"
+            [routerLink]="['/register']"
+            >Register</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="loggedInUser">
+          <a class="nav-link active text-capitalize">Hi, {{ loggedInUser }} </a>
+        </li>
+        <li class="nav-item" *ngIf="loggedInUser">
+          <a
+            class="nav-link active"
+            [routerLink]="['/logout']"
+            (click)="logOut()"
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br />
+<router-outlet></router-outlet>
+<!-- <div class="container-fluid footers">
+  <footer class="bg-light py-4">
+    <div class="row">
+      <div class="col-md-2 col-2">Contact:</div>
+      <div class="col-md-1 col-1">
+        <a
+          class="fb"
+          href="https://www.facebook.com/shekhar.dahiya1"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+      <div class="col-md-1 col-1">
+        <a
+          class="youtube"
+          href="https://www.youtube.com/channel/UCpVe5Iyg2RZ20V5CzpiOyMQ"
+          target="_blank"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+      <div class="col-md-1 col-1">
+        <a
+          class="linkedin"
+          href="https://www.linkedin.com/in/shekhar-dahiya/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="col-md-2 col-6">
+        <a class="call" href="8225884946">
+          <i class="fa-solid fa-phone"></i>
+          +91-8225884946
+        </a>
+      </div>
+    </div>
+  </footer>
+</div> -->

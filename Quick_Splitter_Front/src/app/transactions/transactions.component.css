@@ -1,0 +1,121 @@
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+.headingsTable {
+  font-family: "Verdana", sans-serif;
+  font-weight: bold;
+}
+.vl {
+  border-left: 1px solid grey;
+  height: 30px;
+}
+.impLinks {
+  padding: 5px;
+  /* border: 2px solid blue; */
+  border-radius: 4px;
+}
+a {
+  text-decoration: none;
+}
+.userCreatedTransaction {
+  color: green !important;
+  margin-bottom: 0px;
+}
+.otherCreatedransaction {
+  color: red !important;
+  margin-bottom: 0px;
+}
+.greenPlus {
+  color: green;
+}
+.redMinus {
+  color: red;
+}
+.fa-money-check-dollar {
+  color: green;
+}
+.yourExpenseheading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.allExpensesHeading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#defaultMemberMessage {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.tableHeadColor {
+  background-color: #1d498df1;
+  color: white;
+}
+.topcard {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+/* .tableSpace{
+  padding: 80px;
+} */
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin-left: 50px;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
